@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Status</title>
+     {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+</head>
+<h1>Task Status</h1>
+<body>
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+    <table border="1">
+    <tr>
+    <th>Employee_name</th>
+        <th>Taskdone</th>
+    <th>Assigned_at</th>
+      <th>Taskdone_at</th>
+      <th>Status</th>
+  </tr>
+
+    {% for rec in task %}
+  <tr>
+    <td>{{ rec.user_name}}</td>
+      <td>{{ rec.taskdone}}</td>
+    <td>{{ rec.assigned_at}}</td>
+      <td>{{ rec.taskdone_at}}</td>
+      <td>{{ rec.status}}</td>
+  </tr>
+    {%endfor%}
+    </tbody>
+</table>
+<br>
+<br>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Assignment</title>
+     {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+</head>
+<h1>Task Assignment</h1>
+<body>
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+    <table border="1">
+     <tr>
+    <th>Task_name</th>
+    <th>Assigned_to</th>
+    <th>Assigned_at</th>
+      <th>Deadline</th>
+      <th>Descreption</th>
+      <th>Task_prority</th>
+  </tr>
+
+    {% for rec in task %}
+  <tr>
+    <td>{{ rec.task_name}}</td>
+    <td>{{ rec.assigned_to}}</td>
+    <td>{{ rec.assigned_at}}</td>
+      <td>{{ rec.deadline}}</td>
+      <td>{{ rec.descreption}}</td>
+      <td>{{ rec.task_prority}}</td>
+  </tr>
+    {%endfor%}
+
+<tr>
+    <td>
+<a href="{% url 'taskdone'  %}">Next</a>
+    </td>
+  </tr>
+    </tbody>
+</table>
+<br>
+<br>
+</body>
+</html>
